@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>⚖️ Anonimizador de documentos</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+<header>
+<svg viewBox="0 0 64 64" fill="none" stroke="url(#gg)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" aria-label="Balanza de la justicia"><defs><linearGradient id="gg" gradientUnits="userSpaceOnUse" x1="6" y1="4" x2="58" y2="60"><stop offset="0" stop-color="#ecd27e"/><stop offset="1" stop-color="#a98127"/></linearGradient></defs><path d="M32 3.2 34 6.2 32 9.2 30 6.2z"/><path d="M32 9.5v40.5"/><path d="M32 15C26 15 18 18 10 18M32 15C38 15 46 18 54 18"/><circle cx="10" cy="18" r=".9"/><circle cx="54" cy="18" r=".9"/><path d="M10 18 3 38M10 18l7 20M10 18v20M54 18l-7 20M54 18l7 20M54 18v20"/><path d="M2 38h16c0 4-3.5 7-8 7s-8-3-8-7zM46 38h16c0 4-3.5 7-8 7s-8-3-8-7z"/><path d="M25 50h14M20 55h24"/></svg>
+<div><h1>Anonimizador de documentos</h1>
+<p class="s">⚠︎ Los documentos aquí trabajados se procesan de forma local en tu navegador y no se envían a ningún servidor de terceros ni a la nube. Revisá siempre el resultado antes de utilizarlo.</p></div>
+</header>
+
+<div class="card">
+  <div id="drop">Arrastrá un PDF, Word (.docx) o .txt acá, o hacé clic para elegirlo<br><span class="mu" id="fn"></span></div>
+  <input id="file" type="file" accept=".pdf,.docx,.txt" hidden>
+</div>
+
+<div class="card">
+  <h3>Qué anonimizar</h3>
+  <div class="opts" id="opts">
+    <label><input type="checkbox" data-k="caratula" checked> Carátulas</label>
+    <label><input type="checkbox" data-k="expte" checked> Nº de expediente / autos</label>
+    <label><input type="checkbox" data-k="dni" checked> DNI</label>
+    <label><input type="checkbox" data-k="cuit" checked> CUIT / CUIL</label>
+    <label><input type="checkbox" data-k="dir" checked> Direcciones</label>
+    <label><input type="checkbox" data-k="nombres" checked> Nombres y apellidos</label>
+    <label><input type="checkbox" data-k="mail" checked> Emails</label>
+    <label><input type="checkbox" data-k="tel" checked> Teléfonos</label>
+    <label><input type="checkbox" data-k="cbu" checked> CBU</label>
+    <label><input type="checkbox" data-k="veh" checked> Vehículos (patente, chasis, motor)</label>
+    <label><input type="checkbox" data-k="inm" checked> Inmuebles (matrícula, partida, catastro)</label>
+    <label><input type="checkbox" data-k="juz"> Juzgado / tribunal (opcional)</label>
+  </div>
+  <h3 style="margin-top:12px">Nombres u otros datos que querés anonimizar sí o sí (uno por línea)</h3>
+  <textarea id="manual" rows="3" placeholder="Juan Carlos Pérez&#10;Pérez&#10;Calle Falsa 123&#10;Lote 5 de Lobos"></textarea>
+  <div class="row"><button id="go" disabled title="Primero cargá un documento">Anonimizar</button><button id="clr" class="g">Borrar todo</button><span class="mu" id="st"></span></div>
+</div>
+
+<div class="card" id="sumc" hidden><h3>Resumen de lo anonimizado</h3><div class="chips" id="sum"></div><p class="mu" style="margin:8px 0 0">Si esperabas algo que no figura acá, buscalo en el texto de la derecha y agregalo a la lista manual.</p></div>
+
+<div class="cols">
+  <div class="card"><h3>Original</h3><textarea id="orig" rows="18" readonly></textarea></div>
+  <div class="card"><h3>Anonimizado (podés editarlo)</h3><textarea id="out" rows="18"></textarea></div>
+</div>
+
+<div class="row">
+  <button id="dl" disabled title="Primero cargá y anonimizá un documento">Descargar .docx</button>
+  <button id="dlt" class="g" disabled title="Primero cargá y anonimizá un documento">Descargar .txt</button>
+  <span class="mu">⚠︎ La detección automática resuelve la mayor parte en un primer intento, pero es necesario controlar el resultado: es recomendable leerlo y, si quedó algún dato sin anonimizar (un expediente, un nombre, etc.), copialo y pegalo de forma manual en la lista de arriba y volvé a presionar Anonimizar. Esta herramienta es adaptable: según el tipo de documento (por ejemplo, contratos) pueden ajustarse los datos clave a detectar, sin perjuicio de que siempre se pueden indicar manualmente.</span>
+</div>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
