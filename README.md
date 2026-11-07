@@ -40,7 +40,7 @@ Todo el procesamiento ocurre **localmente en tu navegador**. El documento no se 
 ## Limitaciones
 
 - Es un **prototipo**: la detección se basa en patrones y no es infalible. La primera pasada resuelve la mayor parte, pero es **necesario controlar el resultado**: es recomendable leerlo y, si quedó algún dato sin anonimizar (por ejemplo un expediente o un nombre), **copialo y pegalo de forma manual en la lista** (uno por línea) y volvé a presionar *Anonimizar*.
-- El resultado se genera como texto, por lo que **no conserva el formato original** (tablas, negritas, encabezados).
+- El resultado se genera como texto plano, por lo que **no conserva el formato original** (tablas, negritas, encabezados). Ideal para usarlo con tu agente de IA.
 - Los **PDF escaneados** (imágenes) necesitan OCR previo.
 - No reemplaza el criterio profesional ni las obligaciones legales de protección de datos personales.
 
@@ -57,4 +57,14 @@ app.js       → lógica de lectura, detección, resumen y descarga
 assets/      → capturas de pantalla (anonimizador.png)
 ```
 
-> No subas a este repositorio documentos reales ni ejemplos con datos verdaderos.
+> No subas NUNCA a un repositorio documentos reales ni ejemplos con datos verdaderos.
+
+## 👤 Desarrollado por:
+
+Noelia Natalia María Orsini  
+Abogada (UBA - Esp. Derecho Empresarial) | Counselor / Consultora Psicológica | Desarrolladora Back-End | Analista de Datos | Especialista en Agentes IA y  QA Automation en formación.
+
+### 🔗 Enlaces Profesionales
+* 💼 **LinkedIn:** [linkedin.com/in/noelia-orsini](https://www.linkedin.com/in/noelia-orsini)
+* 🐙 **GitHub:** [github.com/NoeliaOrsini](https://github.com/NoeliaOrsini)
+* 🌐 **Portafolio:** [noelia-orsini-portafolio.lovable.app](https://noelia-orsini-portafolio.lovable.app/)
