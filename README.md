@@ -2,6 +2,8 @@
 
 Herramienta web estática para anonimizar documentos (judiciales, contratos, informes, sucesiones, etc.) en pocos pasos. Se abre en el navegador, sin instalar nada.
 
+> 🔗 **¿Querés probarlo ahora mismo?** Accedé a la aplicación web en vivo: [noeliaorsini.github.io/anonimizador-documentos](https://noeliaorsini.github.io/anonimizador-documentos/)
+
 ## ¿Qué problema resuelve?
  
 Hoy casi todos usamos inteligencia artificial para trabajar, pero **la protección de datos tiene que estar presente siempre**, junto con el **uso ético** de estas herramientas. Antes de compartir un documento con una IA, o con cualquier servicio externo, conviene preguntarse qué datos personales viajan con él.
