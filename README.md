@@ -2,6 +2,13 @@
 
 Herramienta web estática para anonimizar documentos (judiciales, contratos, informes, sucesiones, etc.) en pocos pasos. Se abre en el navegador, sin instalar nada.
 
+## ¿Qué problema resuelve?
+ 
+Hoy casi todos usamos inteligencia artificial para trabajar, pero **la protección de datos tiene que estar presente siempre**, junto con el **uso ético** de estas herramientas. Antes de compartir un documento con una IA, o con cualquier servicio externo, conviene preguntarse qué datos personales viajan con él.
+ 
+Este anonimizador es **una solución** para ese paso previo: permite reemplazar datos personales y sensibles (nombres, DNI, CUIT, expedientes, direcciones, patentes, inmuebles, etc.) **antes** de compartir, analizar o utilizar un documento con herramientas de IA, y lo hace **localmente en tu navegador**, sin enviar nada a la nube. No es la única medida ni reemplaza una buena gobernanza de datos, pero ayuda a aplicar la privacidad desde el diseño (*privacy by design*).
+
+
 ![Captura de la aplicación Anonimizador de documentos](assets/anonimizador.png)
 
 ## Qué hace
@@ -24,6 +31,16 @@ Al terminar muestra un **resumen** de lo reemplazado (por ejemplo, cantidad de p
 - Inmuebles: matrícula, partida, nomenclatura catastral
 - Juzgado o tribunal (opcional, desactivado por defecto: cada usuario decide si es un dato relevante)
 - Cualquier dato que agregues en la **lista manual** (uno por línea)
+
+## Tecnologías
+ 
+- **HTML5, CSS3 y JavaScript** (sin frameworks): interfaz y lógica de la aplicación.
+- **Expresiones regulares**: detección de datos (DNI, CUIT/CUIL, expedientes, patentes, etc.).
+- **[PDF.js](https://mozilla.github.io/pdf.js/)** (v3.11.174): lectura de archivos PDF.
+- **[Mammoth.js](https://github.com/mwilliamson/mammoth.js)** (v1.6.0): lectura de archivos Word (.docx).
+- **[JSZip](https://stuk.github.io/jszip/)** (v3.10.1): generación del archivo .docx de salida.
+- **GitHub Pages**: publicación del sitio.
+
 
 ## Pensado para un uso concreto
 
